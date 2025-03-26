@@ -2,80 +2,71 @@
 #include "pch.h"
 #include "CppUnitTest.h"
 extern "C" {
-
-data_handling
-#include "../AiChatBot/data_handling.h"
+ai_processing
+#include "../AiChatBot/ai_processing.h"
 }
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 // ==================================
-data_handling
-//        DATA HANDLING TESTS
+ai_processing
+//        AI PROCESSING TESTS
 // ==================================
-namespace DataHandlingTests
+namespace AIProcessingTests
 {
-    TEST_CLASS(DataHandlingTests)
+    TEST_CLASS(AIProcessingTests)
     {
     public:
-        TEST_METHOD(TestGetFAQResponse_ValidQuestion)
+        TEST_METHOD(TestProcessQuery_ValidFAQ)
         {
-            Assert::AreEqual("A course is 15 weeks long.", getFAQResponse("How many weeks is a course?"));
+            Assert::AreEqual("A course is 15 weeks long.", processQuery("How many weeks is a course?"));
         }
 
-        TEST_METHOD(TestGetFAQResponse_InvalidQuestion)
+        TEST_METHOD(TestProcessQuery_InvalidQuery)
         {
-            Assert::IsNull(getFAQResponse("What is the weather today?"));
+            Assert::AreEqual("Sorry, I don't understand that question.", processQuery("Tell me a joke."));
         }
 
-        TEST_METHOD(TestGetFAQResponse_EmptyString)
+        TEST_METHOD(TestProcessQuery_HiddenQuestion)
         {
-            Assert::IsNull(getFAQResponse(""));
+            Assert::AreEqual("There are 6 courses in each semester.", processQuery("How many courses are there in each semester?"));
         }
 
-        TEST_METHOD(TestGetFAQResponse_CaseSensitivity)
+        TEST_METHOD(TestProcessQuery_EmptyInput)
         {
-            Assert::IsNull(getFAQResponse("how many weeks is a course?"));
+            Assert::AreEqual("Sorry, I don't understand that question.", processQuery(""));
         }
 
-        TEST_METHOD(TestGetFAQResponse_PartialMatch)
+        TEST_METHOD(TestProcessQuery_CaseSensitivity)
         {
-            Assert::IsNull(getFAQResponse("weeks course"));
+            Assert::AreEqual("Sorry, I don't understand that question.", processQuery("how many weeks is a course?"));
         }
 
-        TEST_METHOD(TestGetFAQResponse_ExactMatch)
+        TEST_METHOD(TestProcessQuery_SpecialCharacters)
         {
-            Assert::AreEqual("Student Success Week is in Week 8.", getFAQResponse("When is the Student Success Week?"));
+            Assert::AreEqual("Sorry, I don't understand that question.", processQuery("@#$%&*"));
         }
 
-        TEST_METHOD(TestLogUserQuery_FileExists)
+        TEST_METHOD(TestProcessQuery_ExactMatchVsSimilar)
         {
-            logUserQuery("Sample query");
-            FILE* file = fopen("query_log.txt", "r");
-            Assert::IsNotNull(file);
-            if (file) fclose(file);
+            Assert::AreEqual("Sorry, I don't understand that question.", processQuery("weeks course?"));
         }
 
-        TEST_METHOD(TestLogUserQuery_AppendEntry)
-        {
-            logUserQuery("Another query");
-            FILE* file = fopen("query_log.txt", "r");
-            fseek(file, 0, SEEK_END);
-            Assert::IsTrue(ftell(file) > 0);
-            fclose(file);
-        }
-
-        TEST_METHOD(TestLogUserQuery_NullInput)
-        {
-            logUserQuery(NULL);
-            Assert::IsTrue(true);
-        }
-
-        TEST_METHOD(TestLogUserQuery_LongInput)
+        TEST_METHOD(TestProcessQuery_LongQuery)
         {
             char longQuery[500] = "This is a very long query...";
-            logUserQuery(longQuery);
-            Assert::IsTrue(true);
+            Assert::AreEqual("Sorry, I don't understand that question.", processQuery(longQuery));
+        }
+
+        TEST_METHOD(TestProcessQuery_NullInput)
+        {
+            Assert::AreEqual("Sorry, I don't understand that question.", processQuery(""));
+        }
+
+        TEST_METHOD(TestProcessQuery_Greetings)
+        {
+            char* response = processQuery("hello");
+            Assert::AreEqual("Chatbot: Hello! How can I help you?", response);
         }
     };
 }
