@@ -3,13 +3,14 @@
 #include "CppUnitTest.h"
 extern "C" {
 
+data_handling
 #include "../AiChatBot/data_handling.h"
-
 }
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 // ==================================
+data_handling
 //        DATA HANDLING TESTS
 // ==================================
 namespace DataHandlingTests
