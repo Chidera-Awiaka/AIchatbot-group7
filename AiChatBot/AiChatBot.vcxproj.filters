@@ -15,8 +15,8 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-user_interaction
-    <ClInclude Include="user_interaction.h">
+data_handling
+    <ClInclude Include="data_handling.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
