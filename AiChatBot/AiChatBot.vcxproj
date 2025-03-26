@@ -127,11 +127,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="ai_processing.c" />
-    <ClCompile Include="main.c" />
+user_interaction
+    <ClInclude Include="user_interaction.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ai_processing.h" />
+    <ClCompile Include="user_interaction.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
