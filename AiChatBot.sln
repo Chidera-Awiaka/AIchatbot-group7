@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35728.132 d17.12
+VisualStudioVersion = 17.12.35728.132
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AiChatBot", "AiChatBot\AiChatBot.vcxproj", "{3DCE5435-82A4-4A6A-AD97-C7543F65DBDD}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "chatbotTests", "chatbotTests\chatbotTests.vcxproj", "{8970663A-434C-8E5C-734C-2EF6DF7E2D31}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,8 +23,19 @@ Global
 		{3DCE5435-82A4-4A6A-AD97-C7543F65DBDD}.Release|x64.Build.0 = Release|x64
 		{3DCE5435-82A4-4A6A-AD97-C7543F65DBDD}.Release|x86.ActiveCfg = Release|Win32
 		{3DCE5435-82A4-4A6A-AD97-C7543F65DBDD}.Release|x86.Build.0 = Release|Win32
+		{8970663A-434C-8E5C-734C-2EF6DF7E2D31}.Debug|x64.ActiveCfg = Debug|x64
+		{8970663A-434C-8E5C-734C-2EF6DF7E2D31}.Debug|x64.Build.0 = Debug|x64
+		{8970663A-434C-8E5C-734C-2EF6DF7E2D31}.Debug|x86.ActiveCfg = Debug|Win32
+		{8970663A-434C-8E5C-734C-2EF6DF7E2D31}.Debug|x86.Build.0 = Debug|Win32
+		{8970663A-434C-8E5C-734C-2EF6DF7E2D31}.Release|x64.ActiveCfg = Release|x64
+		{8970663A-434C-8E5C-734C-2EF6DF7E2D31}.Release|x64.Build.0 = Release|x64
+		{8970663A-434C-8E5C-734C-2EF6DF7E2D31}.Release|x86.ActiveCfg = Release|Win32
+		{8970663A-434C-8E5C-734C-2EF6DF7E2D31}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EBE49399-E9FE-45B2-A2BB-C1495B411249}
 	EndGlobalSection
 EndGlobal
