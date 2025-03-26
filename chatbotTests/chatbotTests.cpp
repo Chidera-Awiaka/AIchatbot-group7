@@ -2,12 +2,14 @@
 #include "pch.h"
 #include "CppUnitTest.h"
 extern "C" {
+ai_processing
 #include "../AiChatBot/ai_processing.h"
 }
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 // ==================================
+ai_processing
 //        AI PROCESSING TESTS
 // ==================================
 namespace AIProcessingTests
