@@ -15,8 +15,15 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-data_handling
-    <ClInclude Include="data_handling.h">
+    <ClCompile Include="chatbotTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="pch.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
