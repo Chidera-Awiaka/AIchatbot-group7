@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{3dce5435-82a4-4a6a-ad97-c7543f65dbdd}</ProjectGuid>
-    <RootNamespace>AiChatBot</RootNamespace>
+    <ProjectGuid>{3219e671-f584-4f18-9d74-9b252c27e73d}</ProjectGuid>
+    <RootNamespace>Projecttest</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -127,10 +127,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="ai_processing.h" />
     <ClInclude Include="data_handling.h" />
+    <ClInclude Include="user_interaction.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ai_processing.c" />
     <ClCompile Include="data_handling.c" />
+    <ClCompile Include="main.c" />
+    <ClCompile Include="user_interaction.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
