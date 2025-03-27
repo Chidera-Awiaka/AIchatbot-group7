@@ -127,12 +127,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-data_handling
     <ClInclude Include="data_handling.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="data_handling.c" />
-
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
